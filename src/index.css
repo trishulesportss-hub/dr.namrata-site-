@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  
+  --color-brand-navy: #0B1B2B;
+  --color-brand-pearl: #F7F4EF;
+  --color-brand-mint: #00C9A7;
+  --color-brand-gold: #C9954C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-pearl);
+    color: var(--color-brand-navy);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom drawing animation keyframe for the smile arc */
+@keyframes drawSmile {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-smile {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawSmile 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
